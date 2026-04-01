@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CyberThreat Identifier — CN Project</title>
+  <meta name="description" content="Interactive cybersecurity threat identification tool covering Malware, Phishing, and DDoS attacks with real-world examples and preventive measures."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<canvas id="bg-canvas"></canvas>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">CYBER<span>SHIELD</span></div>
+  <ul class="nav-links">
+    <li><a href="#threats">Threats</a></li>
+    <li><a href="#malware">Malware</a></li>
+    <li><a href="#phishing">Phishing</a></li>
+    <li><a href="#ddos">DDoS</a></li>
+    <li><a href="#ddos-sim-section">DDoS Sim</a></li>
+    <li><a href="#tools">Tools</a></li>
+    <li><a href="#timeline">Timeline</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge"><span class="blink">●</span> LIVE THREAT IDENTIFICATION SYSTEM</div>
+  <h1>Identify &amp; Defend<br>Against <span class="r">Cyber</span> <span class="g">Threats</span></h1>
+  <p>A comprehensive Computer Networks project tool covering Malware, Phishing, and DDoS attacks — with real-world examples, interactive analyzers, and proven preventive measures.</p>
+  <div class="hero-btns">
+    <a href="#threats" class="btn btn-primary">Explore Threats</a>
+    <a href="#tools" class="btn btn-outline">Try Live Tools</a>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stat-item"><div class="stat-num g">3</div><div class="stat-label">Threat Categories</div></div>
+  <div class="stat-item"><div class="stat-num r">12+</div><div class="stat-label">Real-World Attacks</div></div>
+  <div class="stat-item"><div class="stat-num c">20+</div><div class="stat-label">Prevention Measures</div></div>
+  <div class="stat-item"><div class="stat-num o">4</div><div class="stat-label">Live Analyzer Tools</div></div>
+</div>
+
+<!-- THREAT OVERVIEW -->
+<section id="threats">
+  <div class="section-tag g">// OVERVIEW</div>
+  <h2>Three Major Threat Categories</h2>
+  <p>Modern cyberattacks fall into three primary categories. Click any card to learn more about each threat type.</p>
+  <div class="threat-overview">
+    <a href="#malware" class="threat-card malware">
+      <div class="tc-icon">🦠</div>
+      <div class="tc-title r">Malware</div>
+      <div class="tc-desc">Malicious software designed to damage, disrupt, or gain unauthorized access to systems. Includes viruses, ransomware, trojans &amp; spyware.</div>
+    </a>
+    <a href="#phishing" class="threat-card phishing">
+      <div class="tc-icon">🎣</div>
+      <div class="tc-title o">Phishing</div>
+      <div class="tc-desc">Social engineering attacks that trick users into revealing sensitive data like passwords and credit cards through fake emails or websites.</div>
+    </a>
+    <a href="#ddos" class="threat-card ddos">
+      <div class="tc-icon">💥</div>
+      <div class="tc-title c">DDoS Attacks</div>
+      <div class="tc-desc">Distributed Denial of Service attacks flood a server with traffic from thousands of sources, making it unavailable to legitimate users.</div>
+    </a>
+  </div>
+</section>
+
+<!-- MALWARE SECTION -->
+<section id="malware">
+  <div class="section-tag r">// THREAT 01</div>
+  <h2>🦠 Malware</h2>
+  <p>Malware (malicious software) is any program intentionally designed to cause damage to a computer, server, or network.</p>
+
+  <div class="detail-block">
+    <h3>Types of Malware</h3>
+    <p>Each malware type has a different method of attack and level of damage.</p>
+    <div class="types-grid">
+      <div class="type-pill"><h4 style="color:var(--red)">🔴 Virus</h4><p>Attaches to legitimate files and spreads when the file is executed. Corrupts data and slows systems.</p></div>
+      <div class="type-pill"><h4 style="color:var(--orange)">🟠 Worm</h4><p>Self-replicates across networks without human action. Consumes bandwidth and crashes servers.</p></div>
+      <div class="type-pill"><h4 style="color:var(--red)">🔴 Ransomware</h4><p>Encrypts victim's files and demands payment (Bitcoin) for the decryption key.</p></div>
+      <div class="type-pill"><h4 style="color:var(--purple)">🟣 Trojan</h4><p>Disguises itself as legitimate software. Creates backdoors for attackers once installed.</p></div>
+      <div class="type-pill"><h4 style="color:var(--orange)">🟠 Spyware</h4><p>Silently monitors user activity, keystrokes, and steals passwords and personal data.</p></div>
+      <div class="type-pill"><h4 style="color:var(--red)">🔴 Rootkit</h4><p>Hides deep in OS, gives attacker persistent admin-level access while evading detection.</p></div>
+    </div>
+
+    <div class="divider"></div>
+    <h3 style="margin-bottom:.5rem">Real-World Malware Attacks</h3>
+    <p style="color:var(--muted);margin-bottom:1rem">Famous attacks that caused billions of dollars in damage worldwide.</p>
+    <div class="attacks-grid">
+      <div class="attack-card red">
+        <div class="year">MAY 2017</div>
+        <h4>WannaCry Ransomware</h4>
+        <p>Infected 230,000+ computers in 150 countries. Hit NHS UK, FedEx, Telefonica. Demanded Bitcoin ransom. Damage: $4–8 Billion.</p>
+      </div>
+      <div class="attack-card red">
+        <div class="year">JUNE 2017</div>
+        <h4>NotPetya Wiper</h4>
+        <p>Disguised as ransomware but was a wiper. Hit Maersk, Merck, FedEx. Caused $10 Billion+ in damage. Spread via MeDoc software update.</p>
+      </div>
+      <div class="attack-card red">
+        <div class="year">2020</div>
+        <h4>SolarWinds Supply Chain</h4>
+        <p>Trojan hidden inside SolarWinds Orion software update. Compromised 18,000 orgs including US Treasury, Pentagon &amp; Microsoft.</p>
+      </div>
+      <div class="attack-card red">
+        <div class="year">2021</div>
+        <h4>Colonial Pipeline Ransomware</h4>
+        <p>DarkSide gang shut down largest US fuel pipeline. Caused fuel shortages across US East Coast. $4.4M ransom paid in Bitcoin.</p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+    <h3 style="margin-bottom:1rem">🛡️ Malware Prevention Measures</h3>
+    <ul class="prevention-list">
+      <li><span class="icon">🔄</span><div><strong>Keep Software Updated</strong><br>Patch OS and apps regularly. WannaCry exploited an unpatched Windows flaw (MS17-010).</div></li>
+      <li><span class="icon">🛡️</span><div><strong>Use Antivirus / EDR</strong><br>Tools like Windows Defender, CrowdStrike detect and quarantine malware in real time.</div></li>
+      <li><span class="icon">💾</span><div><strong>Regular Backups (3-2-1 Rule)</strong><br>3 copies, 2 media types, 1 offsite. Defeats ransomware by restoring without paying.</div></li>
+      <li><span class="icon">🚫</span><div><strong>Principle of Least Privilege</strong><br>Users should only have permissions they need. Limits malware's ability to spread.</div></li>
+      <li><span class="icon">🔐</span><div><strong>Application Whitelisting</strong><br>Only allow pre-approved programs to run. Blocks unknown malware from executing.</div></li>
+      <li><span class="icon">📧</span><div><strong>Email Filtering</strong><br>Block malicious attachments (.exe, .bat, macros). Most malware arrives via email.</div></li>
+    </ul>
+  </div>
+</section>
+
+<!-- PHISHING SECTION -->
+<section id="phishing">
+  <div class="section-tag o">// THREAT 02</div>
+  <h2>🎣 Phishing</h2>
+  <p>Phishing is a social engineering attack where attackers impersonate trusted entities to steal sensitive information like passwords, credit card numbers, or login credentials.</p>
+
+  <div class="detail-block">
+    <h3>Types of Phishing</h3>
+    <p>Phishing comes in many forms, from broad email blasts to hyper-targeted attacks.</p>
+    <div class="types-grid">
+      <div class="type-pill"><h4 style="color:var(--orange)">📧 Email Phishing</h4><p>Mass emails impersonating banks, PayPal, or tech companies with fake login pages.</p></div>
+      <div class="type-pill"><h4 style="color:var(--orange)">🎯 Spear Phishing</h4><p>Targeted attack using victim's personal info to appear more legitimate and trustworthy.</p></div>
+      <div class="type-pill"><h4 style="color:var(--red)">🐋 Whaling</h4><p>Targets high-profile executives (CEO, CFO). Often requests urgent wire transfers.</p></div>
+      <div class="type-pill"><h4 style="color:var(--purple)">📱 Smishing</h4><p>Phishing via SMS messages with fake delivery or bank alerts containing malicious links.</p></div>
+      <div class="type-pill"><h4 style="color:var(--orange)">📞 Vishing</h4><p>Voice phishing — attackers call victims pretending to be the IRS, bank, or tech support.</p></div>
+      <div class="type-pill"><h4 style="color:var(--red)">🌀 Pharming</h4><p>Redirects users from legitimate websites to fake ones by poisoning DNS records.</p></div>
+    </div>
+
+    <div class="divider"></div>
+    <h3 style="margin-bottom:.5rem">Real-World Phishing Attacks</h3>
+    <p style="color:var(--muted);margin-bottom:1rem">These attacks cost organizations billions and exposed millions of accounts.</p>
+    <div class="attacks-grid">
+      <div class="attack-card orange">
+        <div class="year">2013–2015</div>
+        <h4>Google &amp; Facebook Scam ($100M)</h4>
+        <p>Lithuanian hacker Evaldas Rimasauskas posed as Quanta Computer (real supplier). Sent fake invoices via email and stole $100M from both companies.</p>
+      </div>
+      <div class="attack-card orange">
+        <div class="year">MARCH 2016</div>
+        <h4>DNC Email Hack (US Election)</h4>
+        <p>Russian hackers sent spear-phishing emails to John Podesta. Fake Google security alert captured his Gmail credentials, exposing 50,000 emails.</p>
+      </div>
+      <div class="attack-card orange">
+        <div class="year">2020</div>
+        <h4>Twitter Celebrity Bitcoin Hack</h4>
+        <p>Attackers spear-phished Twitter employees via phone. Hijacked accounts of Obama, Musk, Gates. Stole $120,000 worth of Bitcoin in hours.</p>
+      </div>
+      <div class="attack-card orange">
+        <div class="year">2022</div>
+        <h4>Uber Data Breach</h4>
+        <p>Attacker texted an Uber contractor pretending to be IT support. Got VPN credentials, accessed internal systems exposing 77,000 employee records.</p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+    <h3 style="margin-bottom:1rem">🛡️ Phishing Prevention Measures</h3>
+    <ul class="prevention-list orange">
+      <li><span class="icon">🔑</span><div><strong>Multi-Factor Authentication (MFA)</strong><br>Even if password is stolen, MFA blocks login. Use authenticator apps, not SMS.</div></li>
+      <li><span class="icon">🔗</span><div><strong>Verify URLs Before Clicking</strong><br>Hover over links to see real destination. Check for HTTPS and correct domain spelling.</div></li>
+      <li><span class="icon">📚</span><div><strong>Security Awareness Training</strong><br>Regular phishing simulation drills for employees. Teach red flags: urgency, requests for credentials.</div></li>
+      <li><span class="icon">📧</span><div><strong>Email Authentication (SPF/DKIM/DMARC)</strong><br>Prevents attackers from spoofing your domain. Marks or rejects fraudulent emails.</div></li>
+      <li><span class="icon">🌐</span><div><strong>Browser Security Extensions</strong><br>Tools like Netcraft or Google Safe Browsing warn before opening known phishing sites.</div></li>
+      <li><span class="icon">🚨</span><div><strong>Zero-Trust Policy for Wire Transfers</strong><br>Always verify financial requests via a secondary channel (phone call) — never email only.</div></li>
+    </ul>
+  </div>
+</section>
+
+<!-- DDOS SECTION -->
+<section id="ddos">
+  <div class="section-tag c">// THREAT 03</div>
+  <h2>💥 DDoS Attacks</h2>
+  <p>A Distributed Denial of Service (DDoS) attack floods a server or network with massive traffic from thousands of compromised machines (botnets), making services unavailable.</p>
+
+  <div class="detail-block">
+    <h3>Types of DDoS Attacks</h3>
+    <p>DDoS attacks target different layers of the network stack.</p>
+    <div class="types-grid">
+      <div class="type-pill"><h4 style="color:var(--cyan)">📦 Volumetric</h4><p>Floods bandwidth using UDP/ICMP packets. Measured in Gbps. Ex: DNS Amplification, NTP flood.</p></div>
+      <div class="type-pill"><h4 style="color:var(--cyan)">⚡ Protocol Attack</h4><p>Exploits weaknesses in Layer 3/4 protocols. Ex: SYN Flood, Ping of Death, Smurf Attack.</p></div>
+      <div class="type-pill"><h4 style="color:var(--purple)">🌐 Application Layer</h4><p>Targets Layer 7 (HTTP). Mimics real traffic. Ex: HTTP Flood, Slowloris, RUDY.</p></div>
+      <div class="type-pill"><h4 style="color:var(--cyan)">🤖 Botnet-based</h4><p>Thousands of infected IoT devices (like Mirai's cameras/routers) used as attack sources.</p></div>
+      <div class="type-pill"><h4 style="color:var(--orange)">🔊 Amplification</h4><p>Attacker spoofs victim's IP and sends small queries to open servers that reply with huge responses.</p></div>
+      <div class="type-pill"><h4 style="color:var(--purple)">🐌 Slowloris</h4><p>Keeps many HTTP connections open using partial requests until the server runs out of connections.</p></div>
+    </div>
+
+    <div class="divider"></div>
+    <h3 style="margin-bottom:.5rem">Real-World DDoS Attacks</h3>
+    <p style="color:var(--muted);margin-bottom:1rem">Some of the largest and most impactful DDoS attacks in history.</p>
+    <div class="attacks-grid">
+      <div class="attack-card cyan">
+        <div class="year">OCTOBER 2016</div>
+        <h4>Dyn DNS — Mirai Botnet</h4>
+        <p>600,000+ IoT devices (cameras, DVRs) used to take down Dyn DNS. Twitter, Netflix, Reddit, Spotify went offline for hours across US East Coast.</p>
+      </div>
+      <div class="attack-card cyan">
+        <div class="year">FEBRUARY 2018</div>
+        <h4>GitHub — 1.35 Tbps Attack</h4>
+        <p>Largest DDoS at the time using Memcached amplification. GitHub was offline for 10 minutes before Akamai's DDoS scrubbing filtered the traffic.</p>
+      </div>
+      <div class="attack-card cyan">
+        <div class="year">FEBRUARY 2020</div>
+        <h4>AWS Shield — 2.3 Tbps</h4>
+        <p>Largest DDoS attack ever recorded at time. AWS Shield mitigated the attack on an unnamed customer. Used CLDAP reflection technique.</p>
+      </div>
+      <div class="attack-card cyan">
+        <div class="year">MARCH 2023</div>
+        <h4>CloudFlare — 71M rps</h4>
+        <p>Record-breaking HTTP/2 DDoS hitting 71 million requests/second from 30,000+ IPs. Targeted gaming, crypto, and hosting providers globally.</p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+    <h3 style="margin-bottom:1rem">🛡️ DDoS Prevention Measures</h3>
+    <ul class="prevention-list cyan">
+      <li><span class="icon">⚡</span><div><strong>Rate Limiting</strong><br>Limit requests per IP per second. Nginx: <code>limit_req_zone</code> blocks flood traffic at the edge.</div></li>
+      <li><span class="icon">☁️</span><div><strong>CDN / WAF (Cloudflare, Akamai)</strong><br>Absorbs and filters attack traffic globally before it reaches your server. Essential for any public service.</div></li>
+      <li><span class="icon">🍪</span><div><strong>SYN Cookies</strong><br>Validates TCP handshakes without allocating memory. Defeats SYN flood attacks at the OS level.</div></li>
+      <li><span class="icon">🔥</span><div><strong>Firewall / IP Blacklisting</strong><br>iptables or cloud security groups can block suspicious IP ranges. Auto-ban IPs hitting thresholds.</div></li>
+      <li><span class="icon">📡</span><div><strong>Anycast Network Diffusion</strong><br>Routes DDoS traffic across multiple data centers, diluting the attack across the global network.</div></li>
+      <li><span class="icon">📊</span><div><strong>Anomaly Detection</strong><br>Monitor traffic baselines. Alert when requests spike abnormally (like in your ddos-tool project!).</div></li>
+    </ul>
+  </div>
+</section>
+
+<!-- DDOS LIVE SIMULATOR -->
+<section id="ddos-sim-section">
+  <div class="section-tag c">// LIVE DEMO</div>
+  <h2>💻 DDoS Attack Simulator</h2>
+  <p>Watch a live visual simulation of a DDoS attack on a server — see the attack flood in real-time and apply defenses to stop it.</p>
+  <div class="sim-wrap">
+    <div class="sim-header">
+      <h3>🖥️ Target Server: <span id="sim-server-status" style="color:var(--green)">ONLINE ✅</span></h3>
+      <div class="sim-controls">
+        <button class="sim-btn attack" onclick="startAttack()">⚡ Launch Attack</button>
+        <button class="sim-btn defend" onclick="applyDefense()">🛡️ Apply Defense</button>
+        <button class="sim-btn reset" onclick="resetSim()">↺ Reset</button>
+      </div>
+    </div>
+    <canvas id="ddos-canvas"></canvas>
+    <div class="sim-stats">
+      <div class="sim-stat"><div class="val" id="sim-rps" style="color:var(--cyan)">0</div><div class="lbl">Req / sec</div></div>
+      <div class="sim-stat"><div class="val" id="sim-bots" style="color:var(--red)">0</div><div class="lbl">Active Bots</div></div>
+      <div class="sim-stat"><div class="val" id="sim-load" style="color:var(--orange)">0%</div><div class="lbl">Server Load</div></div>
+      <div class="sim-stat"><div class="val" id="sim-blocked" style="color:var(--green)">0</div><div class="lbl">Blocked Reqs</div></div>
+    </div>
+    <div class="sim-log" id="sim-log">
+      <div class="log-info">// Simulator ready. Click "Launch Attack" to begin.</div>
+    </div>
+  </div>
+</section>
+
+<!-- INTERACTIVE TOOLS -->
+<section id="tools">
+  <div class="section-tag c">// LIVE TOOLS</div>
+  <h2>🔬 Interactive Analyzers</h2>
+  <p>Use these tools to analyze suspicious URLs and file names for potential threats in real time.</p>
+  <div class="tools-grid">
+
+    <!-- PHISHING URL CHECKER -->
+    <div class="tool-box">
+      <h3>🎣 Phishing URL Analyzer</h3>
+      <p>Enter a URL to check for common phishing indicators using heuristic analysis.</p>
+      <label class="sub">ENTER URL TO ANALYZE</label>
+      <div class="tool-input-wrap">
+        <input class="tool-input" id="url-input" type="text" placeholder="e.g. http://paypa1-login.xyz/secure" />
+        <button class="tool-btn" id="url-btn" onclick="analyzeURL()">Scan</button>
+      </div>
+      <div class="tool-result" id="url-result">
+        <span style="color:var(--muted)">// Result will appear here...</span>
+      </div>
+    </div>
+
+    <!-- MALWARE FILE CHECKER -->
+    <div class="tool-box">
+      <h3>🦠 Malware File Checker</h3>
+      <p>Enter a filename to check if its extension or name pattern suggests it could be malware.</p>
+      <label class="sub">ENTER FILENAME TO CHECK</label>
+      <div class="tool-input-wrap">
+        <input class="tool-input" id="file-input" type="text" placeholder="e.g. invoice.pdf.exe" />
+        <button class="tool-btn" id="file-btn" onclick="analyzeFile()">Check</button>
+      </div>
+      <div class="tool-result" id="file-result">
+        <span style="color:var(--muted)">// Result will appear here...</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- FILE UPLOAD SCANNER -->
+  <div class="tool-box" style="margin-top:2rem;grid-column:1/-1">
+    <h3>📁 File Content Scanner</h3>
+    <p>Upload any file (scripts, HTML, text, code) — our scanner reads the actual content and detects Malware patterns, Phishing tricks, and DDoS code signatures.</p>
+    <div class="upload-zone" id="upload-zone" onclick="document.getElementById('file-upload').click()">
+      <div class="uz-icon">📂</div>
+      <p><strong style="color:var(--cyan)">Click to upload</strong> or drag &amp; drop a file here</p>
+      <p style="margin-top:.3rem;font-size:.72rem">.txt, .html, .py, .js, .bat, .ps1, .sh, .php, .log — any text file</p>
+      <input type="file" id="file-upload" accept="*" onchange="scanUploadedFile(this)" />
+    </div>
+    <div id="upload-result" class="tool-result" style="min-height:120px">
+      <span style="color:var(--muted)">// Upload a file to scan its content for threats...</span>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section id="timeline">
+  <div class="section-tag g">// HISTORY</div>
+  <h2>📅 Notable Cyberattack Timeline</h2>
+  <p>A chronological look at the most impactful cyberattacks that shaped modern cybersecurity practices.</p>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-dot r"></div>
+      <div class="tl-year">2013</div>
+      <div class="tl-title">Target Data Breach — 40 Million Cards Stolen</div>
+      <div class="tl-desc">Malware installed on POS terminals via a phishing email sent to an HVAC contractor with Target network access.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot o"></div>
+      <div class="tl-year">2014</div>
+      <div class="tl-title">Sony Pictures Hack — North Korea</div>
+      <div class="tl-desc">Destructive malware wiped Sony's systems, leaked unreleased films and personal employee data. Politically motivated.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot o"></div>
+      <div class="tl-year">2016</div>
+      <div class="tl-title">DNC Spear Phishing — US Election Interference</div>
+      <div class="tl-desc">Russian APT used targeted phishing emails to compromise Democratic National Committee email accounts.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot c"></div>
+      <div class="tl-year">2016</div>
+      <div class="tl-title">Dyn DDoS — Internet Black Out (Mirai Botnet)</div>
+      <div class="tl-desc">Mirai botnet of 600K+ IoT devices brought down Dyn DNS, crashing Twitter, Netflix &amp; Reddit for millions of users.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot r"></div>
+      <div class="tl-year">2017</div>
+      <div class="tl-title">WannaCry Ransomware — 150 Countries Hit</div>
+      <div class="tl-desc">Exploited EternalBlue (NSA exploit). Demanded Bitcoin. NHS UK had to cancel 19,000+ appointments. $4–8B damage.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot p"></div>
+      <div class="tl-year">2020</div>
+      <div class="tl-title">SolarWinds — Supply Chain Trojan</div>
+      <div class="tl-desc">Trojan in a software update compromised 18,000 organizations including US government agencies for 9+ months undetected.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot r"></div>
+      <div class="tl-year">2021</div>
+      <div class="tl-title">Colonial Pipeline — Ransomware Fuel Crisis</div>
+      <div class="tl-desc">DarkSide ransomware shut down 5,500 miles of fuel pipeline. US declared state of emergency. $4.4M ransom paid.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot c"></div>
+      <div class="tl-year">2023</div>
+      <div class="tl-title">Cloudflare — 71M req/sec DDoS Record</div>
+      <div class="tl-desc">HTTP/2 DDoS attack hitting 71 million requests per second from 30,000+ source IPs — the largest ever recorded at the time.</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>🛡️ CyberThreat Identifier — Computer Networks Project</p>
+  <p style="margin-top:.5rem">Built for educational purposes only. All attack simulations run on <span>localhost</span>.</p>
+</footer>
+
+<!-- SCRIPTS -->
+<script src="tools.js"></script>
+<script src="ddos-sim.js"></script>
+</html>
