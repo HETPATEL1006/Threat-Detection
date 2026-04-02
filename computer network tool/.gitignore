@@ -3,5 +3,5 @@ node_modules/
 .env.local
 .vercel
 *.log
-
-.vercel
+*.pdf
+suspicious-test.ps1

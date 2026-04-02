@@ -288,33 +288,19 @@
       </div>
     </div>
 
-    <!-- MALWARE FILE CHECKER -->
+    <!-- MALWARE FILE CHECKER (Real Upload) -->
     <div class="tool-box">
       <h3>🦠 Malware File Checker</h3>
-      <p>Enter a filename to check if its extension or name pattern suggests it could be malware.</p>
-      <label class="sub">ENTER FILENAME TO CHECK</label>
-      <div class="tool-input-wrap">
-        <input class="tool-input" id="file-input" type="text" placeholder="e.g. invoice.pdf.exe" />
-        <button class="tool-btn" id="file-btn" onclick="analyzeFile()">Check</button>
+      <p>Upload any file — reads actual bytes, computes entropy &amp; magic signatures, then uses AI to detect malware, phishing tricks, and DDoS code patterns.</p>
+      <div class="upload-zone" id="upload-zone" onclick="document.getElementById('file-upload').click()">
+        <div class="uz-icon">📂</div>
+        <p><strong style="color:var(--cyan)">Click to upload</strong> or drag &amp; drop a file here</p>
+        <p style="margin-top:.3rem;font-size:.72rem">.exe .py .js .bat .ps1 .sh .php .html .txt .log — any file type</p>
+        <input type="file" id="file-upload" accept="*" onchange="scanUploadedFile(this)" />
       </div>
-      <div class="tool-result" id="file-result">
-        <span style="color:var(--muted)">// Result will appear here...</span>
+      <div id="upload-result" class="tool-result" style="min-height:120px">
+        <span style="color:var(--muted)">// Upload a file to scan for threats...</span>
       </div>
-    </div>
-  </div>
-
-  <!-- FILE UPLOAD SCANNER -->
-  <div class="tool-box" style="margin-top:2rem;grid-column:1/-1">
-    <h3>📁 File Content Scanner</h3>
-    <p>Upload any file (scripts, HTML, text, code) — our scanner reads the actual content and detects Malware patterns, Phishing tricks, and DDoS code signatures.</p>
-    <div class="upload-zone" id="upload-zone" onclick="document.getElementById('file-upload').click()">
-      <div class="uz-icon">📂</div>
-      <p><strong style="color:var(--cyan)">Click to upload</strong> or drag &amp; drop a file here</p>
-      <p style="margin-top:.3rem;font-size:.72rem">.txt, .html, .py, .js, .bat, .ps1, .sh, .php, .log — any text file</p>
-      <input type="file" id="file-upload" accept="*" onchange="scanUploadedFile(this)" />
-    </div>
-    <div id="upload-result" class="tool-result" style="min-height:120px">
-      <span style="color:var(--muted)">// Upload a file to scan its content for threats...</span>
     </div>
   </div>
 </section>

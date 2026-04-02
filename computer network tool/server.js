@@ -1,7 +1,8 @@
 // ── CyberShield Local Development Server ──
 // Run: node server.js
-// Set your key: $env:ANTHROPIC_API_KEY="sk-ant-..."   (PowerShell)
-//               set ANTHROPIC_API_KEY=sk-ant-...       (CMD)
+// Set your key: $env:GROQ_API_KEY="gsk_..."   (PowerShell)
+//               set GROQ_API_KEY=gsk_...       (CMD)
+// Or add it to a .env file:  GROQ_API_KEY=gsk_...
 
 const http = require('http');
 const https = require('https');
@@ -67,29 +68,28 @@ const server = http.createServer((req, res) => {
         return res.end(JSON.stringify({ error: 'No prompt provided' }));
       }
 
-      const apiKey = process.env.ANTHROPIC_API_KEY;
+      const apiKey = process.env.GROQ_API_KEY || process.env.XAI_API_KEY;
       if (!apiKey) {
         res.writeHead(500, { 'Content-Type': 'application/json' });
         return res.end(JSON.stringify({
-          error: 'ANTHROPIC_API_KEY not set. Run: $env:ANTHROPIC_API_KEY="sk-ant-..."',
+          error: 'GROQ_API_KEY not set. Run: $env:GROQ_API_KEY="gsk_..." in PowerShell, or add GROQ_API_KEY=gsk_... to your .env file',
         }));
       }
 
       const payload = JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
+        model: 'llama-3.3-70b-versatile',
         max_tokens: 1024,
         messages: [{ role: 'user', content: prompt }],
       });
 
       const options = {
-        hostname: 'api.anthropic.com',
-        path: '/v1/messages',
+        hostname: 'api.groq.com',
+        path: '/openai/v1/chat/completions',
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Content-Length': Buffer.byteLength(payload),
-          'x-api-key': apiKey,
-          'anthropic-version': '2023-06-01',
+          'Authorization': `Bearer ${apiKey}`,
         },
       };
 
@@ -135,14 +135,14 @@ server.listen(PORT, () => {
   console.log(`   API   →  http://localhost:${PORT}/api/analyze`);
   console.log('─'.repeat(40));
 
-  const hasKey = !!process.env.ANTHROPIC_API_KEY;
+  const hasKey = !!process.env.GROQ_API_KEY || !!process.env.XAI_API_KEY;
   if (hasKey) {
-    console.log('   ✅  ANTHROPIC_API_KEY is set — AI tools are ready!\n');
+    console.log('   ✅  GROQ_API_KEY is set — AI tools are ready!\n');
   } else {
-    console.log('   ⚠️  ANTHROPIC_API_KEY is NOT set!');
+    console.log('   ⚠️  GROQ_API_KEY is NOT set!');
     console.log('   To fix this locally:');
     console.log('   1. Open the .env file in your code editor.');
-    console.log('   2. Add your key: ANTHROPIC_API_KEY=sk-ant-...');
+    console.log('   2. Add your key: GROQ_API_KEY=gsk_...');
     console.log('   3. Restart this server (Ctrl+C, then node server.js)\n');
   }
 });

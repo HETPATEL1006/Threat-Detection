@@ -198,7 +198,7 @@ section > p { color: var(--muted); max-width: 650px; margin-bottom: 2.5rem; font
 .badge.safe { background: rgba(0,255,136,.15); color: var(--green); border: 1px solid var(--green); }
 
 /* ── INTERACTIVE TOOLS ── */
-.tools-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+.tools-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; max-width: 800px; margin: 0 auto; }
 .tool-box { background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 2rem; }
 .tool-box h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: .4rem; }
 .tool-box p { font-size: .82rem; color: var(--muted); margin-bottom: 1.25rem; }
